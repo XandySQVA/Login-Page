@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastra-se</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="login">
+        <h1>Cadastrar-se no XandyClub</h1>
+
+        <form>
+            <input required type="text" placeholder="Nome completo"><br><br>
+            <input required type="email" placeholder="E-mail"><br><br>
+            <input required id="celular" type="tel" placeholder="(99) 99999-9999" pattern="^\([0-9]{2}\) [0-9]{5}-[0-9]{4}$"><br><br>
+            <input required type="password" placeholder="Senha"><br><br>
+            <label for="termosECondicoes">
+                <input type="checkbox" id="termosECondicoes"> Eu aceito os <a href="#">Termos e Condições</a>
+            </label><br><br>
+
+            <input type="submit" value="Cadastrar-se">
+        </form>
+
+    </main>
+
+    <script>
+        const inputCelular = document.getElementById('celular');
+
+        inputCelular.addEventListener('input', (event) => {
+            let valor = event.target.value.replace(/\D/g, '');
+
+            // Limita a 11 dígitos: DDD + celular
+            valor = valor.substring(0, 11);
+
+            if (valor.length > 0) {
+                valor = valor.replace(/^(\d{2})/, '($1) ');
+            }
+
+            if (valor.replace(/\D/g, '').length > 7) {
+                valor = valor.replace(
+                    /(\d{5})(\d{1,4})$/,
+                    '$1-$2'
+                );
+            }
+
+            event.target.value = valor;
+        });
+    </script>
+</body>
+</html>
