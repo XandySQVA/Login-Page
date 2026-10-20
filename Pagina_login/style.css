@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-image: url(Imagens/Background.jpg);
+    background-color: rgb(11, 0, 27);
+    font-family: "Comic Sans MS", cursive;
+}
+h1{
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 40px;
+    position: relative;
+    top: -50px;
+}
+main{
+    display: flex;
+    height: 630px;
+    justify-content: center;
+    flex-direction: column;
+}
+form{
+    display: inline-block;
+    text-align: center;
+}
+
+input{
+    background-color: #ffffff00;
+    color: dodgerblue;
+    font-size: 16px;
+    padding: 10px;
+    width: 20%;
+    border: 2px solid rgb(73, 109, 175);
+    border-radius: 20px;
+}
+
+input:focus{
+    background-color: #ffffff2a;
+    border-color: rgb(140, 172, 229);
+    outline: none;
+}
+
+input[type="submit"]{
+    background-color: rgb(79, 103, 214);
+    color: aquamarine;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: rgb(101, 126, 238);
+    border-color: rgb(101, 126, 238);
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(140, 172, 229);
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    
+    flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked{
+    background-color: rgb(73, 109, 175);
+}
+
+label{
+    color: cornflowerblue;
+    display: inline-flex;
+    gap: 8px;
+}
